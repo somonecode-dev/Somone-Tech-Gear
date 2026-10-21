@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique - Somone Tech Gear</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR GLOBALE -->
+  <header>
+  <div class="container navbar">
+    
+    <!-- LOGO SVG PREMIUM SOMONE GEAR -->
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="url(#logo-grad)"/>
+          <path d="M26 13H17.5C15.5 13 14 14.5 14 16.5C14 18.5 15.5 20 17.5 20H22.5C24.5 20 26 21.5 26 23.5C26 25.5 24.5 27 22.5 27H14" 
+                stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="26" cy="13" r="2" fill="#22d3ee"/>
+          <circle cx="14" cy="27" r="2" fill="#22d3ee"/>
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0284c7"/>
+              <stop offset="1" stop-color="#0f172a"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-text">
+        SOMONE<span class="text-cyan">.GEAR</span>
+      </div>
+    </a>
+
+    <!-- NAVIGATION (Ajout de id="nav-menu") -->
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produits.html" class="active">Boutique</a></li>
+      <li><a href="wishlist.html">Favoris</a></li>
+      <li><a href="panier.html">Panier</a></li>
+    </ul>
+
+    <!-- ACTIONS -->
+    <div class="nav-actions">
+      <button id="theme-toggle" class="icon-btn" title="Changer de thème">🌙</button>
+      
+      <a href="wishlist.html" class="icon-btn" title="Mes Favoris">
+        ❤️ <span id="wishlist-badge" class="badge">0</span>
+      </a>
+      
+      <a href="panier.html" class="icon-btn" title="Mon Panier">
+        🛒 <span id="cart-badge" class="badge">0</span>
+      </a>
+
+      <!-- BOUTON HAMBURGER MOBILE -->
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+  <main class="container">
+    <section class="shop-header">
+      <div class="shop-title-container">
+       <h1 class="shop-title">Notre Catalogue <span class="text-cyan">d'Équipements</span></h1>
+       <p class="shop-subtitle">Explorez toute notre gamme d'accessoires et périphériques haute performance pour votre setup.</p>
+      </div>
+
+      <div class="shop-controls">
+        <!-- Barre de recherche stylisée -->
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Rechercher un produit (ex: Clavier, Souris...)">
+        </div>
+
+        <!-- Filtres sous forme de Pills -->
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="Tous">Tous</button>
+          <button class="filter-btn" data-category="Périphériques">Périphériques</button>
+          <button class="filter-btn" data-category="Audio">Audio</button>
+          <button class="filter-btn" data-category="Accessoires">Accessoires</button>
+          <button class="filter-btn" data-category="Merch">Merch</button>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Grille des produits -->
+    <section class="products-section">
+      <div id="products-grid" class="products-grid">
+        <!-- Les cartes de produits seront générées par js/produits.js -->
+      </div>
+    </section>
+
+    <!-- MODALE APERÇU PRODUIT -->
+    <div id="quickview-modal" class="modal-overlay">
+      <div class="modal-content product-modal-content">
+        <button class="modal-close-btn" onclick="closeQuickView()">&times;</button>
+        <div class="product-modal-grid">
+          <!-- Galerie d'images -->
+          <div class="product-gallery">
+            <div class="main-image-container">
+              <img id="qv-main-img" src="" alt="Produit">
+            </div>
+            <div class="thumbnails-container" id="qv-thumbnails">
+              <!-- Les 3 vignettes générées par JS -->
+            </div>
+          </div>
+          <!-- Infos Produit -->
+          <div class="product-modal-info">
+            <span id="qv-category" class="product-badge"></span>
+            <h2 id="qv-title"></h2>
+            <p id="qv-price" class="qv-price-tag"></p>
+            <p id="qv-description"></p>
+            <div class="qv-actions">
+              <button id="qv-add-btn" class="btn-primary">Ajouter au panier</button>
+            </div>
+          </div>
+            </div>
+          </div>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SCRIPTS JS -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/produits.js"></script>
+</body>
+</html>
